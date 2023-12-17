@@ -13,6 +13,3 @@ perform the necessary operations
 The program is given a list of songs. It is required to find the best fit. When saying the best fit
 it needs to fit the most number of songs on two 45-minute playlists (45-minutes is the most common size of
 a blank cassette). 
-
-## Files Used
-
