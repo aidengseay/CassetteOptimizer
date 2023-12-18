@@ -26,18 +26,26 @@ def getSongList(playlist_url):
                                                  scope='playlist-read-private'))
 
     # Extract playlist ID from the URL
-    playlist_id = playlist_url.split('/')[-1]
+    try:
+        playlist_id = playlist_url.split('/')[-1]
 
-    # Get the tracks from the playlist (max 100 songs)
-    results = sp.playlist_tracks(playlist_id)
+        # Get the tracks from the playlist (max 100 songs)
+        results = sp.playlist_tracks(playlist_id)
 
-    # Print information about each track
-    for track in results['items']:
-        track_name = track['track']['name']
-        artist_name = track['track']['artists'][0]['name']
-        duration_s = track['track']['duration_ms'] // 1000
+        # initialize list
+        returnList = []
 
-        print(f"Track: {track_name} - Artist: {artist_name} - Duration: {duration_s}")
+        # Print information about each track
+        for track in results['items']:
+            trackName = track['track']['name']
+            artistName = track['track']['artists'][0]['name']
+            duration = track['track']['duration_ms'] // 1000 # unit: seconds
 
+            returnList.append([trackName, artistName, duration])
+
+        return returnList
+    
+    except:
+        return None
 
 ################################################################################

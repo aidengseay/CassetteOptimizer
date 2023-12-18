@@ -19,8 +19,10 @@ def main():
     playlistURL = input("Input Playlist URL: ")
     songInputList = CassetteInputUtility.getSongList(playlistURL)
 
-    print(songInputList)
-
+    if songInputList == None:
+        return 0
+    
+    # songInputList is ready for algo
 
 
 
