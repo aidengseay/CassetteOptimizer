@@ -26,4 +26,3 @@ The program will take in the song title, artist, and song duration (sec).
 ## Optimization Specifications
 
 This program will use the best-fit bin packing algorithm. 
-
