@@ -1,8 +1,7 @@
 ################################################################################
 # Cassette Input Utility
-# ========================
+# ======================
 # This file is responsible for getting the proper input playlist from spotify.
-# The program will optimize the best songs to fit on the cassette.
 # Created by Aiden Seay, Winter 2023
 ################################################################################
 # IMPORTS
