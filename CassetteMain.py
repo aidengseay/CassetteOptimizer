@@ -6,7 +6,7 @@
 # Created by Aiden Seay, Winter 2023
 ################################################################################
 # IMPORTS
-import CassetteInputUtility
+import Utilities.CassetteIOUtility as CassetteIOUtility
 
 ################################################################################
 # CONSTANTS
@@ -17,13 +17,19 @@ import CassetteInputUtility
 def main():
 
     # Get the song input list
+    #playlistURL = input("Input Playlist URL: ")
     playlistURL = "https://open.spotify.com/playlist/0DzTpmJhUZNdmWvWhYf2ME"
-    print("Input Playlist URL: https://open.spotify.com/playlist/0DzTpmJhUZNdmWvWhYf2ME")
-    
-    songInputList = CassetteInputUtility.getSongList(playlistURL)
+    songInputList = CassetteIOUtility.getSongList(playlistURL)
 
+    # Check for input failure
     if songInputList == None:
+
+        print("Insert valid Spotify Playlist link")
         return 0
+    
+    # Assume correct user input
+
+    returnSongList = [[],[]]
     
     print(songInputList)
 

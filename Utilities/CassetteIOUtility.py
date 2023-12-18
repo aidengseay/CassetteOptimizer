@@ -1,5 +1,5 @@
 ################################################################################
-# Cassette Input Utility
+# Cassette IO Utility
 # ======================
 # This file is responsible for getting the proper input playlist from spotify.
 # Created by Aiden Seay, Winter 2023
@@ -18,20 +18,19 @@ def getSongList(playlist_url):
     SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
     SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
 
-    # Create a SpotifyOAuth object
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
+    try:
+        # Create a SpotifyOAuth object
+        sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+                                            client_id=SPOTIPY_CLIENT_ID,
                                             client_secret=SPOTIPY_CLIENT_SECRET,
                                             redirect_uri=SPOTIPY_REDIRECT_URI,
                                                  scope='playlist-read-private'))
 
-    # Extract playlist ID from the URL
-    try:
         playlist_id = playlist_url.split('/')[-1]
 
         # Get the tracks from the playlist (max 100 songs)
         results = sp.playlist_tracks(playlist_id)
 
-        # initialize list
         returnList = []
 
         # Print information about each track
@@ -46,5 +45,9 @@ def getSongList(playlist_url):
     
     except:
         return None
+    
+def returnSongList():
+
+    ...
 
 ################################################################################
