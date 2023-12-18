@@ -1,15 +1,28 @@
 # Cassette Optimizer
 
+Created by Aiden Seay, Winter 2023
+
 ## Overview
-This project is taking a Spotify playlist and optimizing the best fit for a cassette.
+
+This project is taking a Spotify playlist and optimizing the best fit for a cassette. Each cassette has 45 minutes of audio on each side. This program takes this into account and does appropriate calculations so the cassette can have the most songs possible.
+
+## How to use
+
+1. Include necessary environmental variables `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` in your local system.
+2. Execute `pip install spotipy` in your terminal.
+3. Run `python CassetteMain.py` in your terminal.
+4. Input a Spotify playlist URL.
+5. The program returns a text file with optimal song order for cassette conversion.
 
 ## Input Specifications
-A Python file will take data from Spotify via an API. This will take song data from a
-playlist. We will worry about collecting the song title, artist, and song duration.
-The input data from Spotify will be formatted into a text file for the C program to use and
-perform the necessary operations
+
+A Python file will take data from Spotify via Spotipy API. The user must input a
+playlist such as below:
+
+https://open.spotify.com/playlist/37i9dQZF1DWSIXPHRZ4SKc
+
+The program will take in the song title, artist, and song duration (sec).
 
 ## Optimization Specifications
-The program is given a list of songs. It is required to find the best fit. When saying the best fit
-it needs to fit the most number of songs on two 45-minute playlists (45-minutes is the most common size of
-a blank cassette). 
+
+This program will use the best-fit bin packing algorithm. 
