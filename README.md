@@ -8,8 +8,11 @@ This project is taking a Spotify playlist and optimizing the best fit for a cass
 
 ## How to use
 
-1. Include necessary environmental variables `SPOTIPY_CLIENT_ID` and `POTIPY_CLIENT_SECRET` in your local system
-2. Run `python CassetteMain.py` in your terminal.
+1. Include necessary environmental variables `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` in your local system.
+2. Execute `pip install spotipy` in your terminal.
+3. Run `python CassetteMain.py` in your terminal.
+4. Input a Spotify playlist URL.
+5. The program returns a text file with optimal song order for cassette conversion.
 
 ## Input Specifications
 
@@ -22,5 +25,5 @@ The program will take in the song title, artist, and song duration (sec).
 
 ## Optimization Specifications
 
-This program will be using the best fit algorithm. 
+This program will use the best-fit bin packing algorithm. 
 
