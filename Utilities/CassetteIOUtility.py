@@ -10,6 +10,14 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 ################################################################################
+# Classes
+class Song:
+    def __init__(self, name, artist, duration):
+        self.name = name
+        self.artist = artist
+        self.duration = duration
+
+################################################################################
 
 def getSongList(playlist_url):
 
@@ -39,14 +47,15 @@ def getSongList(playlist_url):
             artistName = track['track']['artists'][0]['name']
             duration = track['track']['duration_ms'] // 1000 # unit: seconds
 
-            returnList.append([trackName, artistName, duration])
+            returnList.append(Song(name=trackName, artist=artistName, 
+                                                             duration=duration))
 
         return returnList
     
     except:
         return None
     
-def returnSongList():
+def returnSongList(cassetteSongList):
 
     ...
 
