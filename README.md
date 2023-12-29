@@ -9,10 +9,11 @@ This project is taking a Spotify playlist and optimizing the best fit for a cass
 ## How to use
 
 1. Include necessary environmental variables `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` in your local system.
-2. Execute `pip install spotipy` in your terminal.
-3. Run `python CassetteMain.py` in your terminal.
-4. Input a Spotify playlist URL.
-5. The program returns a text file with optimal song order for cassette conversion.
+2. Execute `pip install spotipy`.
+3. Execute `pip install ortools`. 
+4. Run `python CassetteMain.py` in your terminal.
+5. Input a Spotify playlist URL.
+6. The program returns a text file `cassette.txt` with optimal song order for cassette conversion.
 
 ## Input Specifications
 
@@ -25,6 +26,7 @@ The program will take in the song title, artist, and song duration (sec).
 
 ## Optimization Specifications
 
-This program will use the best-fit bin packing algorithm.
+This program will use the multiple knapsack problem. The implementation outline 
+to solve this problem is below. 
 
-Knapsack problem: https://en.wikipedia.org/wiki/Knapsack_problem
+Knapsack problem: https://developers.google.com/optimization/pack/multiple_knapsack

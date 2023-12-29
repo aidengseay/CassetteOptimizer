@@ -12,6 +12,7 @@ from Utilities.CassettePackUtility import *
 
 ################################################################################
 # CONSTANTS
+BIN_SIZE = 2695
 
 ################################################################################
 
@@ -20,7 +21,7 @@ def main():
 
     # Get the song input list
     #playlistURL = input("Input Playlist URL: ")
-    playlistURL = "https://open.spotify.com/playlist/0DzTpmJhUZNdmWvWhYf2ME"
+    playlistURL = "https://open.spotify.com/playlist/37i9dQZF1EP6YuccBxUcC1"
     songInputList = getSongList(playlistURL)
 
     # Check for input failure
@@ -31,10 +32,10 @@ def main():
     
     # Processing
     cassetteSongList = [[],[]]
-    packCassette(songInputList, cassetteSongList)
+    packCassette(songInputList, cassetteSongList, BIN_SIZE )
 
     # Output results
-    print("Results stored in cassette.txt")
+    print("\nResults stored in cassette.txt")
 
     returnSongList(cassetteSongList)
 
