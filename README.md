@@ -15,6 +15,18 @@ This project is taking a Spotify playlist and optimizing the best fit for a cass
 5. Input a Spotify playlist URL.
 6. The program returns a text file `cassette.txt` with optimal song order for cassette conversion.
 
+## Demo
+
+### Input
+You will paste your appropriate Spotify playlist link in the command line (see [Input Specifications]())
+
+[IMAGE OF PROCESS HERE]
+
+### Output
+The program will return a text file of all the songs you can fit onto the cassette. 
+
+[IMAGE OF OUTPUT HERE]
+
 ## Input Specifications
 
 A Python file will take data from Spotify via Spotipy API. The user must input a
