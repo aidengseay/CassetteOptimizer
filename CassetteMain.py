@@ -16,12 +16,14 @@ BIN_SIZE = 2695
 
 ################################################################################
 
-# Main 
+# MAIN PROGRAM
 def main():
 
+    print("Cassette Optimizer Program")
+    print("==========================")
+    
     # Get the song input list
-    #playlistURL = input("Input Playlist URL: ")
-    playlistURL = "https://open.spotify.com/playlist/37i9dQZF1EP6YuccBxUcC1"
+    playlistURL = input("Input Playlist URL: ")
     songInputList = getSongList(playlistURL)
 
     # Check for input failure
@@ -31,15 +33,12 @@ def main():
         return 0
     
     # Processing
-    cassetteSongList = [[],[]]
-    packCassette(songInputList, cassetteSongList, BIN_SIZE )
+    cassetteSongList = packCassette(songInputList, BIN_SIZE )
 
     # Output results
     print("\nResults stored in cassette.txt")
-
     returnSongList(cassetteSongList)
 
-    input("Press enter to exit... ")
-
 ################################################################################
-main()
+if __name__ == "__main__":
+    main()

@@ -8,13 +8,13 @@
 from ortools.linear_solver import pywraplp
 
 ################################################################################
-# CONSTANTS
 
-################################################################################
-
-def packCassette(songInputList, cassetteSongList, binCap):
+# Find the most optimal way to pack the cassette
+def packCassette(songInputList, binCap):
 
     durationList = []
+    returnList = [[],[]]
+
     for song in songInputList:
         durationList.append(song.duration)
     
@@ -65,28 +65,13 @@ def packCassette(songInputList, cassetteSongList, binCap):
     status = solver.Solve()
 
     if status == pywraplp.Solver.OPTIMAL:
-        print(f"Total packed value: {objective.Value()}")
-        total_weight = 0
-        for b in data["all_bins"]:
-            print(f"Bin {b}")
-            bin_weight = 0
-            bin_value = 0
-            for i in data["all_items"]:
+        for b in data["all_bins"]: # iterate through the bins b
+            for i in data["all_items"]: # iterate through the song indices i
                 if x[i, b].solution_value() > 0:
-                    print(
-                        f"Item {i} weight: {data['weights'][i]} \
-                                                     value: {data['values'][i]}"
-                    )
-                    bin_weight += data["weights"][i]
-                    bin_value += data["values"][i]
-            print(f"Packed bin weight: {bin_weight}")
-            print(f"Packed bin value: {bin_value}\n")
-            total_weight += bin_weight
-        print(f"Total packed weight: {total_weight}")
+                    returnList[b].append(songInputList[i])
     else:
         print("The problem does not have an optimal solution.")
-    
 
-
+    return returnList
 
 ################################################################################
