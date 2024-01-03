@@ -10,6 +10,18 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 ################################################################################
+# CLASSES
+class Song:
+    def __init__(self, name, artist, duration):
+        self.name = name
+        self.artist = artist
+        self.duration = duration
+
+################################################################################
+# CONSTANTS
+OUTPUT_FILE = "cassette.txt"
+
+################################################################################
 
 def getSongList(playlist_url):
 
@@ -39,15 +51,38 @@ def getSongList(playlist_url):
             artistName = track['track']['artists'][0]['name']
             duration = track['track']['duration_ms'] // 1000 # unit: seconds
 
-            returnList.append([trackName, artistName, duration])
+            returnList.append(Song(name=trackName, artist=artistName, 
+                                                             duration=duration))
 
         return returnList
     
     except:
         return None
     
-def returnSongList():
+def returnSongList(cassetteSongList):
 
-    ...
+    with open(OUTPUT_FILE, "w") as outFile:
+
+        outFile.write("Cassette Songs\n")
+        outFile.write("==============\n\n")
+
+        count = 0
+
+        for side in cassetteSongList:
+
+            if count == 0:
+                outFile.write("Side A\n")
+                count += 1
+            else:
+                outFile.write("Side B\n")
+
+            outFile.write("------\n")
+
+            for song in side:
+                outFile.write(f"{song.name} -- [{song.artist}]\n")
+
+            outFile.write(f"\n")
+
+
 
 ################################################################################

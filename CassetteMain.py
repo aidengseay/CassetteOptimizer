@@ -6,39 +6,39 @@
 # Created by Aiden Seay, Winter 2023
 ################################################################################
 # IMPORTS
-import Utilities.CassetteIOUtility as CassetteIOUtility
+from Utilities.CassetteIOUtility import *
+from Utilities.CassettePackUtility import *
+
 
 ################################################################################
 # CONSTANTS
+BIN_SIZE = 2695
 
 ################################################################################
 
-# Main 
+# MAIN PROGRAM
 def main():
 
+    print("Cassette Optimizer Program")
+    print("==========================")
+    
     # Get the song input list
-    #playlistURL = input("Input Playlist URL: ")
-    playlistURL = "https://open.spotify.com/playlist/0DzTpmJhUZNdmWvWhYf2ME"
-    songInputList = CassetteIOUtility.getSongList(playlistURL)
+    playlistURL = input("Input Playlist URL: ")
+    songInputList = getSongList(playlistURL)
 
     # Check for input failure
     if songInputList == None:
 
-        print("Insert valid Spotify Playlist link")
+        print("Insert valid Spotify playlist link")
         return 0
     
-    # Assume correct user input
+    # Processing
+    cassetteSongList = packCassette(songInputList, BIN_SIZE )
 
-    returnSongList = [[],[]]
-    
-    print(songInputList)
-
-
-
-
-
-
-
+    # Output results
+    print("\nResults stored in cassette.txt")
+    returnSongList(cassetteSongList)
 
 ################################################################################
-main()
+if __name__ == "__main__":
+    main()
