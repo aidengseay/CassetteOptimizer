@@ -18,7 +18,7 @@ This project is taking a Spotify playlist and optimizing the best fit for a cass
 ## Demo
 
 ### Input
-You will paste your appropriate Spotify playlist link in the command line (see [Input Specifications](https://github.com/aidengseay/CassetteOptimizer/blob/dev/README.md#input-specifications))
+You will paste your appropriate Spotify playlist link in the command line (see [Input Specifications](https://github.com/aidengseay/CassetteOptimizer/blob/main/README.md#input-specifications))
 
 ![Screenshot 2024-01-02 164126](https://github.com/aidengseay/CassetteOptimizer/assets/108606344/1cc72e85-b50a-4f23-b8bb-b9322e1e1f35)
 
