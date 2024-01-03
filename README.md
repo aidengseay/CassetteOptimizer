@@ -20,12 +20,12 @@ This project is taking a Spotify playlist and optimizing the best fit for a cass
 ### Input
 You will paste your appropriate Spotify playlist link in the command line (see [Input Specifications](https://github.com/aidengseay/CassetteOptimizer/blob/dev/README.md#input-specifications))
 
-[IMAGE OF PROCESS HERE]
+![Screenshot 2024-01-02 164126](https://github.com/aidengseay/CassetteOptimizer/assets/108606344/1cc72e85-b50a-4f23-b8bb-b9322e1e1f35)
 
 ### Output
 The program will return a text file of all the songs you can fit onto the cassette. 
 
-[IMAGE OF OUTPUT HERE]
+![Screenshot 2024-01-02 164220](https://github.com/aidengseay/CassetteOptimizer/assets/108606344/9c9f6320-fd61-4a7d-b90f-b316e4f34ce4)
 
 ## Input Specifications
 
